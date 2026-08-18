@@ -130,9 +130,7 @@ public class SwitchBlockEntity extends ElectricBlockEntity implements IHaveGoggl
     @Override
     protected void write(CompoundTag tag, HolderLookup.Provider registries, boolean clientPacket) {
         super.write(tag, registries, clientPacket);
-        if(clientPacket) {
-            tag.putBoolean("State", switchState);
-        }
+        tag.putBoolean("State", switchState);
         if(overvoltResistance != null) {
             tag.putFloat("Overvolted", overvoltResistance);
             if(playEffect) {
